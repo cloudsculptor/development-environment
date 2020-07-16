@@ -9,18 +9,19 @@
 
 export HOME=/c/Users/RicThomas
 
-# source bashrc
+# alias management
 
 alias uda="cp ~/cloudsculptor/development-environment/shared/.bash_aliases ~/;source ~/.bash_aliases"    # Update Aliases
+alias al='cat ~/.bash_aliases'
 
 # change directory
 alias cdt='cd ~/code/landonline-titles'
+alias cds='cd ~/code/landonline-search'
 alias cdde='cd ~/cloudsculptor/development-environment'
 
 # general
 
 alias cls='printf "\033c"'
-alias al='cat ~/.bash_aliases'
 alias lo='libreoffice'
 alias pdf='xdg-open'
 alias l='ls -la'
@@ -78,6 +79,8 @@ alias gwip='git add --all;git commit -m "WIP"'
 alias gaa='git add --all'
 alias gfh='git log -p'
 
+function gdl() { git branch -d "$1"; }
+function gdr() { git push origin --delete "$1"; }
 function gdf() { git diff --name-only HEAD HEAD~1 ; }
 function gcm() { git commit -m "$1"; }
 function gc() { git checkout "$1"; }
